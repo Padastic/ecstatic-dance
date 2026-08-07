@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ecstatic Dance &mdash; Chania, Crete</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
 
 :root {
   --bg: #F9F5F0;
@@ -130,7 +130,7 @@ body {
 }
 
 .hero-title {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Serif', serif;
   font-weight: 400;
   font-size: clamp(3.5rem, 10vw, 9rem);
   line-height: 1.05;
@@ -187,7 +187,7 @@ body {
 
 /* ---------- SECTION HEADINGS ---------- */
 .section-heading {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Serif', serif;
   font-weight: 400;
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   color: var(--text);
@@ -197,7 +197,7 @@ body {
 }
 
 .section-heading-sm {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Serif', serif;
   font-weight: 400;
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   color: var(--text);
@@ -209,7 +209,8 @@ body {
 /* ---------- WHAT IS ECSTATIC DANCE ---------- */
 .what-is-ed {
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/hero.png') center/cover no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  will-change: transform;
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -287,7 +288,7 @@ body {
 }
 
 .info-card-value {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Serif', serif;
   font-weight: 500;
   font-size: 1.5rem;
   color: var(--text);
@@ -330,7 +331,8 @@ body {
   width: 100%;
   min-height: 70vh;
   background: url('img/dj.png') center/cover no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  will-change: transform;
 }
 
 /* ---------- SCHEDULE TIMELINE ---------- */
@@ -382,7 +384,7 @@ body {
 }
 
 .timeline-event {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Serif', serif;
   font-weight: 500;
   font-size: 1.3rem;
   color: var(--text);
@@ -399,7 +401,8 @@ body {
 /* ---------- FACILITATORS ---------- */
 .facilitators-section {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/bluehour.png') center/cover no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  will-change: transform;
 }
 
 .facilitators-section .section-heading-sm {
@@ -438,7 +441,7 @@ body {
 }
 
 .facilitator-name {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Serif', serif;
   font-weight: 600;
   font-size: 1.55rem;
   color: var(--text);
@@ -524,7 +527,7 @@ a.sponsor-link:hover {
 .site-footer {
   text-align: center;
   padding: 3rem 2rem;
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Serif', serif;
   font-style: italic;
   font-size: 1rem;
   color: var(--text-muted);
@@ -646,7 +649,7 @@ a.sponsor-link:hover {
 </header>
 
 <!-- ===== WHAT IS ECSTATIC DANCE ===== -->
-<section class="section what-is-ed bg-cream" id="what-is" data-parallax="0.5">
+<section class="section what-is-ed bg-cream" id="what-is">
   <div class="container">
     <div class="reveal">
       <div class="lang-el show">
@@ -691,7 +694,7 @@ a.sponsor-link:hover {
 </section>
 
 <!-- ===== VENUE IMAGE ===== -->
-<section class="venue-section" id="venue" data-parallax="0.5"></section>
+<section class="venue-section" id="venue"></section>
 
 <!-- ===== SCHEDULE ===== -->
 <section class="section bg-cream" id="schedule">
@@ -755,7 +758,7 @@ a.sponsor-link:hover {
 </section>
 
 <!-- ===== FACILITATORS ===== -->
-<section class="section facilitators-section" id="facilitators" data-parallax="0.5">
+<section class="section facilitators-section" id="facilitators">
   <div class="container">
     <div class="reveal">
       <div class="lang-el show"><h2 class="section-heading-sm">&Sigma;&upsilon;&nu;&tau;&epsilon;&lambda;&epsilon;&sigma;&tau;&#x03AD;&sigmaf;</h2>
@@ -904,30 +907,6 @@ a.sponsor-link:hover {
   });
 })();
 
-// Parallax — background images move at 20% scroll speed
-(function() {
-  var parallaxEls = document.querySelectorAll('[data-parallax]');
-  
-  function updateParallax() {
-    var scrollY = window.pageYOffset;
-    parallaxEls.forEach(function(el) {
-      var speed = parseFloat(el.getAttribute('data-parallax')) || 0.2;
-      var rect = el.getBoundingClientRect();
-      var elTop = rect.top + scrollY;
-      var elHeight = rect.height;
-      var viewH = window.innerHeight;
-      
-      // Only animate when section is visible
-      if (rect.bottom > 0 && rect.top < viewH) {
-        var offset = (scrollY - elTop) * speed;
-        el.style.backgroundPositionY = 'calc(50% + ' + offset + 'px)';
-      }
-    });
-    requestAnimationFrame(updateParallax);
-  }
-  
-  requestAnimationFrame(updateParallax);
-})();
 </script>
 
 
