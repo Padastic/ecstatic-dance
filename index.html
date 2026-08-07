@@ -280,6 +280,43 @@ body {
   margin-top: 0.3rem;
 }
 
+.info-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.info-card-link:hover .map-hint {
+  color: var(--accent-deep);
+}
+
+.map-hint {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+/* ---------- VENUE IMAGE ---------- */
+.venue-section {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.venue-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
 /* ---------- SCHEDULE TIMELINE ---------- */
 .timeline {
   max-width: 520px;
@@ -413,33 +450,40 @@ body {
 }
 
 /* ---------- SUPPORT ---------- */
-.support-list {
-  list-style: none;
+.sponsor-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
-  max-width: 640px;
+  align-items: center;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.support-list li {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 0.9rem;
-  color: var(--text-muted);
+.sponsor-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.85;
 }
 
-.support-list a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease, color 0.3s ease;
+a.sponsor-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
-.support-list a:hover {
-  color: var(--accent-deep);
-  border-bottom-color: var(--accent-deep);
+.sponsor-logo {
+  max-height: 60px;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.sponsor-text {
+  cursor: default;
 }
 
 /* ---------- FOOTER ---------- */
@@ -497,6 +541,13 @@ body {
     align-items: center;
     gap: 0.8rem;
   }
+  .sponsor-grid {
+    gap: 1.5rem;
+  }
+  .sponsor-logo {
+    max-height: 45px;
+    max-width: 120px;
+  }
 }
 </style>
 </head>
@@ -545,7 +596,10 @@ body {
       </div>
       <div class="info-card">
         <p class="info-card-label">&Tau;&Omicron;&Pi;&Omicron;&Theta;&Epsilon;&Sigma;&Iota;&Alpha; / LOCATION</p>
-        <p class="info-card-value">Modi Home<br><small>&Pi;&epsilon;&rho;&iota;&omicron;&chi;&#x03AE; &Pi;&lambda;&alpha;&tau;&alpha;&nu;&iota;&#x03AC;, Platanias</small></p>
+        <a href="https://www.google.com/maps/place/%CE%9C%CF%8C%CE%B4%CE%B9,+%CE%A0%CE%BB%CE%B1%CF%84%CE%B1%CE%BD%CE%B9%CE%AC%CF%82+730+14/@35.506,23.885,15z" target="_blank" rel="noopener" class="info-card-link">
+          <p class="info-card-value">Modi Home<br><small>&Pi;&epsilon;&rho;&iota;&omicron;&chi;&#x03AE; &Pi;&lambda;&alpha;&tau;&alpha;&nu;&iota;&#x03AC;, Platanias</small></p>
+          <span class="map-hint">Open in Google Maps &rarr;</span>
+        </a>
       </div>
       <div class="info-card">
         <p class="info-card-label">&Tau;&Iota;&Mu;&Eta; / PRICE</p>
@@ -553,6 +607,11 @@ body {
       </div>
     </div>
   </div>
+</section>
+
+<!-- ===== VENUE IMAGE ===== -->
+<section class="venue-section" id="venue">
+  <img src="img/modo.jpeg" alt="Modi Home" class="venue-image">
 </section>
 
 <!-- ===== SCHEDULE ===== -->
@@ -688,21 +747,33 @@ body {
     <div class="reveal">
       <p class="section-label">&Epsilon;&Lambda;&Lambda;&Eta;&Nu;&Iota;&Kappa;&Alpha;</p>
       <h2 class="section-heading-sm">&Mu;&epsilon; &tau;&eta;&nu; &upsilon;&pi;&omicron;&sigma;&tau;&#x03AE;&rho;&iota;&xi;&eta; &tau;&omega;&nu;</h2>
-      <ul class="support-list">
-        <li><a href="https://www.makemusicmemories.com/" target="_blank" rel="noopener">Make Music Memories</a></li>
-        <li><a href="https://daedalusacademy.com" target="_blank" rel="noopener">Daedalus Academy</a></li>
-        <li>Praxis</li>
-      </ul>
+      <div class="sponsor-grid">
+        <a href="https://www.makemusicmemories.com/" target="_blank" rel="noopener" class="sponsor-link">
+          <img src="img/makemusic.png" alt="Make Music Memories" class="sponsor-logo">
+        </a>
+        <a href="https://daedalusacademy.com" target="_blank" rel="noopener" class="sponsor-link">
+          <img src="img/daedalus.png" alt="Daedalus Academy" class="sponsor-logo">
+        </a>
+        <span class="sponsor-link sponsor-text">
+          <img src="img/praxis.png" alt="Praxis" class="sponsor-logo">
+        </span>
+      </div>
 
       <div class="lang-divider"></div>
 
       <p class="section-label">ENGLISH</p>
       <h2 class="section-heading-sm">With the support of</h2>
-      <ul class="support-list">
-        <li><a href="https://www.makemusicmemories.com/" target="_blank" rel="noopener">Make Music Memories</a></li>
-        <li><a href="https://daedalusacademy.com" target="_blank" rel="noopener">Daedalus Academy</a></li>
-        <li>Praxis</li>
-      </ul>
+      <div class="sponsor-grid">
+        <a href="https://www.makemusicmemories.com/" target="_blank" rel="noopener" class="sponsor-link">
+          <img src="img/makemusic.png" alt="Make Music Memories" class="sponsor-logo">
+        </a>
+        <a href="https://daedalusacademy.com" target="_blank" rel="noopener" class="sponsor-link">
+          <img src="img/daedalus.png" alt="Daedalus Academy" class="sponsor-logo">
+        </a>
+        <span class="sponsor-link sponsor-text">
+          <img src="img/praxis.png" alt="Praxis" class="sponsor-logo">
+        </span>
+      </div>
     </div>
   </div>
 </section>
