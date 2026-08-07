@@ -206,11 +206,36 @@ body {
   letter-spacing: 0.01em;
 }
 
+
+/* ---------- PARALLAX BG ---------- */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+.parallax-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  will-change: transform;
+}
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.55);
+}
+.parallax-section .container {
+  position: relative;
+  z-index: 2;
+}
+
 /* ---------- WHAT IS ECSTATIC DANCE ---------- */
 .what-is-ed {
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/hero.png') center/cover no-repeat;
-  background-attachment: fixed;
-  will-change: transform;
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -330,9 +355,6 @@ body {
 .venue-section {
   width: 100%;
   min-height: 70vh;
-  background: url('img/dj.png') center/cover no-repeat;
-  background-attachment: fixed;
-  will-change: transform;
 }
 
 /* ---------- SCHEDULE TIMELINE ---------- */
@@ -400,9 +422,6 @@ body {
 
 /* ---------- FACILITATORS ---------- */
 .facilitators-section {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/bluehour.png') center/cover no-repeat;
-  background-attachment: fixed;
-  will-change: transform;
 }
 
 .facilitators-section .section-heading-sm {
@@ -649,7 +668,9 @@ a.sponsor-link:hover {
 </header>
 
 <!-- ===== WHAT IS ECSTATIC DANCE ===== -->
-<section class="section what-is-ed bg-cream" id="what-is">
+<section class="section what-is-ed bg-cream parallax-section" id="what-is">
+  <div class="parallax-bg" style="background-image: url('img/hero.png')"></div>
+  <div class="parallax-overlay"></div>
   <div class="container">
     <div class="reveal">
       <div class="lang-el show">
@@ -694,7 +715,8 @@ a.sponsor-link:hover {
 </section>
 
 <!-- ===== VENUE IMAGE ===== -->
-<section class="venue-section" id="venue"></section>
+<section class="venue-section parallax-section" id="venue">
+  <div class="parallax-bg" style="background-image: url('img/dj.png')"></div></section>
 
 <!-- ===== SCHEDULE ===== -->
 <section class="section bg-cream" id="schedule">
@@ -758,7 +780,9 @@ a.sponsor-link:hover {
 </section>
 
 <!-- ===== FACILITATORS ===== -->
-<section class="section facilitators-section" id="facilitators">
+<section class="section facilitators-section parallax-section" id="facilitators">
+  <div class="parallax-bg" style="background-image: url('img/bluehour.png')"></div>
+  <div class="parallax-overlay"></div>
   <div class="container">
     <div class="reveal">
       <div class="lang-el show"><h2 class="section-heading-sm">&Sigma;&upsilon;&nu;&tau;&epsilon;&lambda;&epsilon;&sigma;&tau;&#x03AD;&sigmaf;</h2>
@@ -922,6 +946,26 @@ function switchLang(lang) {
     el.classList.toggle('show', lang === 'en');
   });
 }
+
+// Smooth parallax — GPU-composited, zero jitter
+(function() {
+  var bgs = document.querySelectorAll('.parallax-bg');
+  
+  function update() {
+    var scrollY = window.pageYOffset;
+    for (var i = 0; i < bgs.length; i++) {
+      var bg = bgs[i];
+      var section = bg.parentElement;
+      var rect = section.getBoundingClientRect();
+      var sectionTop = rect.top + scrollY;
+      var offset = (scrollY - sectionTop) * 0.3;
+      bg.style.transform = 'translate3d(0, ' + offset + 'px, 0)';
+    }
+    requestAnimationFrame(update);
+  }
+  
+  requestAnimationFrame(update);
+})();
 </script>
 
 </body>
