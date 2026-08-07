@@ -209,7 +209,7 @@ body {
 /* ---------- WHAT IS ECSTATIC DANCE ---------- */
 .what-is-ed {
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/hero.png') center/cover no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -406,7 +406,7 @@ body {
 /* ---------- FACILITATORS ---------- */
 .facilitators-section {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/bluehour.png') center/cover no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .facilitators-section .section-heading-sm {
@@ -653,7 +653,7 @@ a.sponsor-link:hover {
 </header>
 
 <!-- ===== WHAT IS ECSTATIC DANCE ===== -->
-<section class="section what-is-ed bg-cream" id="what-is">
+<section class="section what-is-ed bg-cream" id="what-is" data-parallax="0.2">
   <div class="container">
     <div class="reveal">
       <div class="lang-el show">
@@ -764,7 +764,7 @@ a.sponsor-link:hover {
 </section>
 
 <!-- ===== FACILITATORS ===== -->
-<section class="section facilitators-section" id="facilitators">
+<section class="section facilitators-section" id="facilitators" data-parallax="0.2">
   <div class="container">
     <div class="reveal">
       <div class="lang-el show"><h2 class="section-heading-sm">&Sigma;&upsilon;&nu;&tau;&epsilon;&lambda;&epsilon;&sigma;&tau;&#x03AD;&sigmaf;</h2>
@@ -911,6 +911,31 @@ a.sponsor-link:hover {
     }
     observer.observe(el);
   });
+})();
+
+// Parallax — background images move at 20% scroll speed
+(function() {
+  var parallaxEls = document.querySelectorAll('[data-parallax]');
+  
+  function updateParallax() {
+    var scrollY = window.pageYOffset;
+    parallaxEls.forEach(function(el) {
+      var speed = parseFloat(el.getAttribute('data-parallax')) || 0.2;
+      var rect = el.getBoundingClientRect();
+      var elTop = rect.top + scrollY;
+      var elHeight = rect.height;
+      var viewH = window.innerHeight;
+      
+      // Only animate when section is visible
+      if (rect.bottom > 0 && rect.top < viewH) {
+        var offset = (scrollY - elTop) * speed;
+        el.style.backgroundPositionY = 'calc(50% + ' + offset + 'px)';
+      }
+    });
+    requestAnimationFrame(updateParallax);
+  }
+  
+  requestAnimationFrame(updateParallax);
 })();
 </script>
 
