@@ -236,6 +236,8 @@ body {
 
 /* ---------- WHAT IS ECSTATIC DANCE ---------- */
 .what-is-ed {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/hero.png') center/cover no-repeat;
+  background-attachment: fixed;
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -355,6 +357,8 @@ body {
 .venue-section {
   width: 100%;
   min-height: 70vh;
+  background: url('img/dj.png') center/cover no-repeat;
+  background-attachment: fixed;
 }
 
 /* ---------- SCHEDULE TIMELINE ---------- */
@@ -422,6 +426,8 @@ body {
 
 /* ---------- FACILITATORS ---------- */
 .facilitators-section {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/bluehour.png') center/cover no-repeat;
+  background-attachment: fixed;
 }
 
 .facilitators-section .section-heading-sm {
@@ -668,9 +674,7 @@ a.sponsor-link:hover {
 </header>
 
 <!-- ===== WHAT IS ECSTATIC DANCE ===== -->
-<section class="section what-is-ed bg-cream parallax-section" id="what-is">
-  <div class="parallax-bg" style="background-image: url('img/hero.png')"></div>
-  <div class="parallax-overlay"></div>
+<section class="section what-is-ed bg-cream" id="what-is">
   <div class="container">
     <div class="reveal">
       <div class="lang-el show">
@@ -715,8 +719,7 @@ a.sponsor-link:hover {
 </section>
 
 <!-- ===== VENUE IMAGE ===== -->
-<section class="venue-section parallax-section" id="venue">
-  <div class="parallax-bg" style="background-image: url('img/dj.png')"></div></section>
+<section class="venue-section" id="venue"></section>
 
 <!-- ===== SCHEDULE ===== -->
 <section class="section bg-cream" id="schedule">
@@ -780,9 +783,7 @@ a.sponsor-link:hover {
 </section>
 
 <!-- ===== FACILITATORS ===== -->
-<section class="section facilitators-section parallax-section" id="facilitators">
-  <div class="parallax-bg" style="background-image: url('img/bluehour.png')"></div>
-  <div class="parallax-overlay"></div>
+<section class="section facilitators-section" id="facilitators">
   <div class="container">
     <div class="reveal">
       <div class="lang-el show"><h2 class="section-heading-sm">&Sigma;&upsilon;&nu;&tau;&epsilon;&lambda;&epsilon;&sigma;&tau;&#x03AD;&sigmaf;</h2>
@@ -947,25 +948,6 @@ function switchLang(lang) {
   });
 }
 
-// Smooth parallax — GPU-composited, zero jitter
-(function() {
-  var bgs = document.querySelectorAll('.parallax-bg');
-  
-  function update() {
-    var scrollY = window.pageYOffset;
-    for (var i = 0; i < bgs.length; i++) {
-      var bg = bgs[i];
-      var section = bg.parentElement;
-      var rect = section.getBoundingClientRect();
-      var sectionTop = rect.top + scrollY;
-      var offset = (scrollY - sectionTop) * 0.3;
-      bg.style.transform = 'translate3d(0, ' + offset + 'px, 0)';
-    }
-    requestAnimationFrame(update);
-  }
-  
-  requestAnimationFrame(update);
-})();
 </script>
 
 </body>
