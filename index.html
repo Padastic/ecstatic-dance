@@ -207,27 +207,42 @@ body {
 }
 
 /* ---------- WHAT IS ECSTATIC DANCE ---------- */
+.what-is-ed {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/hero.png') center/cover no-repeat;
+  background-attachment: fixed;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
 .what-is-ed .container {
   max-width: 820px;
+  text-align: center;
+}
+
+.what-is-ed .section-heading {
+  color: #FFFFFF;
+}
+
+.what-is-ed .section-label {
+  color: rgba(255,255,255,0.7);
 }
 
 .ed-body {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: clamp(1rem, 2.2vw, 1.15rem);
-  line-height: 1.85;
-  color: var(--text);
+  color: rgba(255,255,255,0.9);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .ed-body p + p {
   margin-top: 1.2rem;
 }
 
-.ed-ornament {
-  width: 40px;
-  height: 1px;
-  background: var(--accent);
-  margin: 1.5rem 0;
+.what-is-ed .lang-divider {
+  background: rgba(255,255,255,0.2);
 }
 
 /* ---------- INFO CARDS ---------- */
@@ -618,7 +633,7 @@ a.sponsor-link:hover {
       <div class="lang-el show"><p class="section-label">&Epsilon;&Lambda;&Lambda;&Eta;&Nu;&Iota;&Kappa;&Alpha;</p>
       <h2 class="section-heading">&Tau;&iota; &epsilon;&#x03AF;&nu;&alpha;&iota; &tau;&omicron; Ecstatic Dance</h2>
       <div class="ed-body">
-        <p>&Tau;&omicron; Ecstatic Dance &epsilon;&#x03AF;&nu;&alpha;&iota; &mu;&iota;&alpha; &pi;&rho;&alpha;&kappa;&tau;&iota;&kappa;&#x03AE; &epsilon;&lambda;&epsilon;&#x03CD;&theta;&epsilon;&rho;&eta;&sigmaf; &kappa;&#x03AF;&nu;&eta;&sigma;&eta;&sigmaf;, &#x1F15;&nu;&alpha; &tau;&alpha;&xi;&#x03AF;&delta;&iota; &#x03CC;&pi;&omicron;&upsilon; &eta; &mu;&omicron;&upsilon;&sigma;&iota;&kappa;&#x03AE; &gamma;&#x03AF;&nu;&epsilon;&tau;&alpha;&iota; &omicron;&delta;&eta;&gamma;&#x03CC;&sigmaf; &kappa;&alpha;&iota; &tau;&omicron; &sigma;&#x03CE;&mu;&alpha; &epsilon;&kappa;&phi;&rho;&#x03AC;&zeta;&epsilon;&tau;&alpha;&iota; &chi;&omega;&rho;&#x03AF;&sigmaf; &beta;&#x03AE;&mu;&alpha;&tau;&alpha;, &chi;&omega;&rho;&#x03AF;&sigmaf; &kappa;&rho;&iota;&tau;&#x03AD;&sigmaf;, &chi;&omega;&rho;&#x03AF;&sigmaf; &pi;&rho;&omicron;&sigma;&delta;&omicron;&kappa;&#x03AF;&epsilon;&sigmaf;. &Gamma;&epsilon;&nu;&nu;&#x03AE;&theta;&eta;&kappa;&epsilon; &sigma;&tau;&eta; &Chi;&alpha;&beta;&#x03AC;&eta; &tau;&omicron; 2000 &kappa;&alpha;&iota; &alpha;&pi;&#x03CC; &tau;&#x03CC;&tau;&epsilon; &#x1F14;&chi;&epsilon;&iota; &epsilon;&xi;&alpha;&pi;&lambda;&omega;&theta;&epsilon;&#x03AF; &sigma;&epsilon; &#x03CC;&lambda;&omicron; &tau;&omicron;&nu; &kappa;&#x03CC;&sigma;&mu;&omicron; &omega;&sigmaf; &mu;&iota;&alpha; &mu;&omicron;&rho;&phi;&#x03AE; &kappa;&iota;&nu;&omicron;&#x03CD;&mu;&epsilon;&nu;&omicron;&upsilon; &delta;&iota;&alpha;&lambda;&omicron;&gamma;&iota;&sigma;&mu;&omicron;&#x03CD; — &#x1F15;&nu;&alpha;&sigmaf; &alpha;&sigma;&phi;&alpha;&lambda;&#x03AE;&sigmaf; &chi;&#x03CE;&rho;&omicron;&sigmaf; &#x03CC;&pi;&omicron;&upsilon; &omicron; &kappa;&alpha;&theta;&#x03AD;&nu;&alpha;&sigmaf; &mu;&pi;&omicron;&rho;&epsilon;&#x03AF; &nu;&alpha; &epsilon;&#x03AF;&nu;&alpha;&iota; &omicron; &epsilon;&alpha;&upsilon;&tau;&#x03CC;&sigmaf; &tau;&omicron;&upsilon;, &nu;&alpha; &alpha;&pi;&epsilon;&lambda;&epsilon;&upsilon;&theta;&epsilon;&rho;&omega;&theta;&epsilon;&#x03AF; &kappa;&alpha;&iota; &nu;&alpha; &sigma;&upsilon;&nu;&delta;&epsilon;&theta;&epsilon;&#x03AF; &mu;&epsilon; &tau;&eta;&nu; &kappa;&omicron;&iota;&nu;&#x03CC;&tau;&eta;&tau;&alpha; &mu;&#x03AD;&sigma;&alpha; &alpha;&pi;&#x03CC; &tau;&omicron;&nu; &rho;&upsilon;&theta;&mu;&#x03CC; &kappa;&alpha;&iota; &tau;&eta;&nu; &alpha;&nu;&alpha;&pi;&nu;&omicron;&#x03AE;.</p>
+        <p>&Epsilon;&lambda;&epsilon;&#x03CD;&theta;&epsilon;&rho;&eta; &kappa;&#x03AF;&nu;&eta;&sigma;&eta;. &Chi;&omega;&rho;&#x03AF;&sigmaf; &beta;&#x03AE;&mu;&alpha;&tau;&alpha;. &Chi;&omega;&rho;&#x03AF;&sigmaf; &kappa;&rho;&iota;&tau;&#x03AD;&sigmaf;. &Mu;&#x03CC;&nu;&omicron; &mu;&omicron;&upsilon;&sigma;&iota;&kappa;&#x03AE; &kappa;&alpha;&iota; &sigma;&#x03CE;&mu;&alpha;.</p>
       </div>
 
       </div>
@@ -627,7 +642,7 @@ a.sponsor-link:hover {
 
       <div class="lang-en"><p class="section-label">ENGLISH</p>
       <div class="ed-body">
-        <p>Ecstatic Dance is a free-form movement practice — a journey where music becomes the guide and the body expresses itself without choreography, without judgment, without expectations. Born in Hawaii in 2000, it has since spread across the world as a form of moving meditation: a safe space where everyone can be themselves, release what no longer serves them, and connect with community through rhythm and breath.</p></div>
+        <p>Free movement. No steps. No judges. Just music and body.</p></div>
       </div>
     </div>
   </div>
