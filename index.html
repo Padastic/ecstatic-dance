@@ -559,7 +559,16 @@ a.sponsor-link:hover {
   letter-spacing: 0.03em;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- iOS FIX: background-attachment: fixed not supported ---------- */
+@supports (-webkit-touch-callout: none) {
+  .what-is-ed,
+  .venue-section,
+  .facilitators-section {
+    background-attachment: scroll;
+  }
+}
+
+
 @media (max-width: 1024px) {
   .info-grid,
   .facilitator-grid {
